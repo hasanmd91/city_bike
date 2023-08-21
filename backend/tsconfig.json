@@ -8,8 +8,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true
-  },
-  "include": ["./src/"],
-  "exclude": ["../wwwroot/app", "node_modules/*"]
+    "esModuleInterop": true,
+    "noImplicitAny": false
+  }
 }

@@ -1,7 +1,7 @@
 // const fs = require('fs');
 // const csv = require('csv-parser');
 // const { MongoClient } = require('mongodb');
-// interface JourneyData {
+// interface JourneyType {
 //   Departure: string;
 //   Return: string;
 //   'Departure station id': string;
@@ -23,7 +23,7 @@
 //     await journeysCollection.deleteMany({});
 //     fs.createReadStream('2021-05.csv')
 //       .pipe(csv({ batchSize: 100 }))
-//       .on('data', async (row: JourneyData) => {
+//       .on('data', async (row: JourneyType) => {
 //         const departureTime = row.Departure;
 //         const returnTime = row.Return;
 //         const departureStationId = parseInt(row['Departure station id'], 10);

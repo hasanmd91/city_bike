@@ -1,29 +1,14 @@
 import fs from 'fs';
 import csv from 'csv-parser';
-
-export type BikeStationData = {
-  FID: number;
-  ID: number;
-  Nimi: string;
-  Namn: string;
-  Name: string;
-  Osoite: string;
-  Adress: string;
-  Kaupunki: string;
-  Stad: string;
-  Operaattor: string;
-  Kapasiteet: number;
-  x: string;
-  y: string;
-};
+import { BikeStationType } from '../../Types';
 
 type ConvertCsvToJsonType = (
   file: string,
-  callBack: (data: BikeStationData[]) => void
+  callBack: (data: BikeStationType[]) => void
 ) => void;
 
 export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
-  const data: BikeStationData[] = [];
+  const data: BikeStationType[] = [];
 
   try {
     fs.createReadStream(file)
@@ -33,7 +18,7 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
         const ID = parseInt(row.ID, 10);
         const Kapasiteet = parseInt(row.Kapasiteet, 10);
 
-        const station: BikeStationData = {
+        const station: BikeStationType = {
           FID,
           ID,
           Nimi: row.Nimi,

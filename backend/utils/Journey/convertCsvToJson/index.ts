@@ -1,28 +1,18 @@
-const fs = require('fs');
-const csv = require('csv-parser');
-
-export type JourneyData = {
-  departure: string;
-  return: string;
-  departureStationId: string;
-  departureStationName: string;
-  returnStationId: string;
-  returnStationName: string;
-  coveredDistance: number;
-  duration: number;
-};
+import fs from 'fs';
+import csv from 'csv-parser';
+import { JourneyType } from '../../Types';
 
 type ConvertCsvToJsonType = (
   file: string,
-  callBack: (data: JourneyData[]) => void
+  callBack: (data: JourneyType[]) => void
 ) => void;
 
 export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
-  const data: JourneyData[] = [];
+  const data: JourneyType[] = [];
 
   try {
     fs.createReadStream(file)
-      .pipe(csv({ batchSize: 100 }))
+      .pipe(csv())
       .on('data', (row) => {
         const departureTime = row.Departure;
         const returnTime = row.Return;
@@ -34,7 +24,7 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
         const duration = parseInt(row['Duration (sec.)'], 10);
 
         if (duration >= 10 && coveredDistance >= 10) {
-          const journey: JourneyData = {
+          const journey: JourneyType = {
             departure: departureTime,
             return: returnTime,
             departureStationId,

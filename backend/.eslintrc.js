@@ -7,14 +7,18 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'airbnb',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    'prettier/prettier': 'error',
+    'arrow-body-style': 'off',
+    'prefer-arrow-callback': 'off',
     '@typescript-eslint/no-require-imports': 0,
     '@typescript-eslint/no-var-requires': 0,
     'comma-dangle': 0,
@@ -24,5 +28,7 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/prefer-default-export': 0,
     'prefer-destructuring': 0,
+    'implicit-arrow-linebreak': 0,
+    'no-console': 0,
   },
 };

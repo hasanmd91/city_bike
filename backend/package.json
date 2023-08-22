@@ -11,6 +11,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard-with-typescript": "^37.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -30,7 +31,9 @@
     "lint:fix": "eslint . --fix",
     "test": "jest",
     "csv:journey": "ts-node --esm  utils/Journey/write/index.ts  utils/Journey/write/data.csv utils/Journey/write/data.json && npx prettier --write utils/Journey/write/data.json",
-    "csv:staion": "ts-node --esm  utils/Station/write/index.ts  utils/Station/write/data.csv utils/Station/write/data.json && npx prettier --write utils/Station/write/data.json"
+    "csv:staion": "ts-node --esm  utils/Station/write/index.ts  utils/Station/write/data.csv utils/Station/write/data.json && npx prettier --write utils/Station/write/data.json",
+    "import:journey": "ts-node --esm  utils/database/index.ts utils/Journey/write/data.json journey",
+    "import:station": "ts-node --esm  utils/database/index.ts utils/Station/write/data.json station"
   },
   "dependencies": {
     "convert-csv-to-json": "^2.0.0",
@@ -38,6 +41,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongodb": "^5.7.0",
+    "mongoose": "^7.4.4",
     "uuid": "^9.0.0"
   }
 }

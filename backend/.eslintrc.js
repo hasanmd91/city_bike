@@ -14,11 +14,14 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  eslintIgnore: ['*.js'],
-
   rules: {
     '@typescript-eslint/no-require-imports': 0,
     '@typescript-eslint/no-var-requires': 0,
     'comma-dangle': 0,
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
+    'import/prefer-default-export': 0,
   },
 };

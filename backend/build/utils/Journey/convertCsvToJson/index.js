@@ -1,25 +1,10 @@
+Object.defineProperty(exports, '__esModule', { value: true });
+exports.convertCsvToJson = void 0;
 const fs = require('fs');
 const csv = require('csv-parser');
 
-export type JourneyData = {
-  departure: string;
-  return: string;
-  departureStationId: string;
-  departureStationName: string;
-  returnStationId: string;
-  returnStationName: string;
-  coveredDistance: number;
-  duration: number;
-};
-
-type ConvertCsvToJsonType = (
-  file: string,
-  callBack: (data: JourneyData[]) => void
-) => void;
-
-export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
-  const data: JourneyData[] = [];
-
+const convertCsvToJson = (file, callBack) => {
+  const data = [];
   try {
     fs.createReadStream(file)
       .pipe(csv({ batchSize: 100 }))
@@ -32,9 +17,8 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
         const returnStationName = row['Return station name'];
         const coveredDistance = parseInt(row['Covered distance (m)'], 10);
         const duration = parseInt(row['Duration (sec.)'], 10);
-
         if (duration >= 10 && coveredDistance >= 10) {
-          const journey: JourneyData = {
+          const journey = {
             departure: departureTime,
             return: returnTime,
             departureStationId,
@@ -44,7 +28,6 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
             coveredDistance,
             duration,
           };
-
           data.push(journey);
         }
       })
@@ -58,3 +41,4 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
     console.error('An error occurred:', error);
   }
 };
+exports.convertCsvToJson = convertCsvToJson;

@@ -27,9 +27,10 @@
     "dev": "ts-node-dev index.ts",
     "start": "node build/index.js",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "npm lint --fix",
+    "lint:fix": "eslint . --fix",
     "test": "jest",
-    "csv:json": "ts-node --esm  utils/write/index.ts  utils/write/data.csv utils/write/data.json && npx prettier --write utils/write/data.json"
+    "csv:journey": "ts-node --esm  utils/Journey/write/index.ts  utils/Journey/write/data.csv utils/Journey/write/data.json && npx prettier --write utils/Journey/write/data.json",
+    "csv:staion": "ts-node --esm  utils/Station/write/index.ts  utils/Station/write/data.csv utils/Station/write/data.json && npx prettier --write utils/Station/write/data.json"
   },
   "dependencies": {
     "convert-csv-to-json": "^2.0.0",

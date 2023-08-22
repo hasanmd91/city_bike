@@ -15,14 +15,16 @@ const index_1 = require('../convertCsvToJson/index');
 const write = () => __awaiter(void 0, void 0, void 0, function* () {
   const args = process.argv;
   if (args.length !== 4) {
+    // eslint-disable-next-line no-console
     console.log(`Usage: ${args[0]} ${args[1]} input output`);
     return;
   }
   const inputFile = args[2];
   const outputFile = args[3];
-  const inputExists = yield (0, fs_1.existsSync)(inputFile);
+  const inputExists = (0, fs_1.existsSync)(inputFile);
   const outputExists = yield (0, fs_1.existsSync)(outputFile);
   if (!inputExists || !outputExists) {
+    // eslint-disable-next-line no-console
     console.log('Please use valid input and output file paths');
     return;
   }

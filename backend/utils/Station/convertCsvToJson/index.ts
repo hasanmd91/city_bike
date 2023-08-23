@@ -4,7 +4,7 @@ import { BikeStationType } from '../../Types';
 
 type ConvertCsvToJsonType = (
   file: string,
-  callBack: (data: BikeStationType[]) => void
+  callBack: (data: BikeStationType[]) => void,
 ) => void;
 
 export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {

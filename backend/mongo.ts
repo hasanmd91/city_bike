@@ -8,7 +8,7 @@ mongoose
     'connected to mongodb';
   })
   .catch((error) =>
-    console.log(`error connecting to mongodb: ${error.message}`),
+    console.log(`error connecting to mongodb: ${error.message}`)
   );
 
 export default mongoose;

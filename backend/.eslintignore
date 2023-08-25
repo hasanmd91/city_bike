@@ -1,9 +1,0 @@
-node_modules/
-build/
-dist/
-coverage/
-*.min.js
-.eslintrc.*
-jest.config.js
-**/cdk.out
-*.d.ts

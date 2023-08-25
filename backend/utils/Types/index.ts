@@ -24,3 +24,8 @@ export type BikeStationType = {
   x: string;
   y: string;
 };
+
+export enum DatabaseType {
+  Journey = 'Journey',
+  Station = 'Station',
+}

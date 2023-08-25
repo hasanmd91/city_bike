@@ -4,7 +4,7 @@ import { BikeStationType } from '../../Types';
 
 type ConvertCsvToJsonType = (
   file: string,
-  callBack: (data: BikeStationType[]) => void,
+  callBack: (data: BikeStationType[]) => void
 ) => void;
 
 export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
@@ -17,32 +17,40 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
         const FID = parseInt(row.FID, 10);
         const ID = parseInt(row.ID, 10);
         const Kapasiteet = parseInt(row.Kapasiteet, 10);
+        const Nimi = row.Nimi;
+        const Namn = row.Namn;
+        const Name = row.Name;
+        const Osoite = row.Osoite;
+        const Adress = row.Adress;
+        const Kaupunki = row.Kaupunki;
+        const Stad = row.Stad;
+        const Operaattor = row.Operaattor;
+        const x = row.x;
+        const y = row.y;
 
         const station: BikeStationType = {
           FID,
           ID,
-          Nimi: row.Nimi,
-          Namn: row.Namn,
-          Name: row.Name,
-          Osoite: row.Osoite,
-          Adress: row.Adress,
-          Kaupunki: row.Kaupunki,
-          Stad: row.Stad,
-          Operaattor: row.Operaattor,
+          Nimi,
+          Namn,
+          Name,
+          Osoite,
+          Adress,
+          Kaupunki,
+          Stad,
+          Operaattor,
           Kapasiteet,
-          x: row.x,
-          y: row.y,
+          x,
+          y,
         };
 
         data.push(station);
       })
       .on('end', () => {
-        // eslint-disable-next-line no-console
-        console.log('Data import completed.');
+        console.info('Data import completed.');
         callBack(data);
       });
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error('An error occurred:', error);
   }
 };

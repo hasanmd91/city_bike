@@ -34,8 +34,8 @@
     "lint:fix": "eslint . --fix",
     "csv:journey": "ts-node --esm  utils/Journey/write/index.ts  utils/Journey/write/data.csv utils/Journey/write/data.json && npx prettier --write utils/Journey/write/data.json",
     "csv:staion": "ts-node --esm  utils/Station/write/index.ts  utils/Station/write/data.csv utils/Station/write/data.json && npx prettier --write utils/Station/write/data.json",
-    "import:journey": "ts-node --esm  utils/database/index.ts utils/Journey/write/data.json journey",
-    "import:station": "ts-node --esm  utils/database/index.ts utils/Station/write/data.json station"
+    "import:journey": "ts-node --esm  utils/database/write/index.ts utils/Journey/write/data.json Journey",
+    "import:station": "ts-node --esm  utils/database/write/index.ts utils/Station/write/data.json Station"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -1,6 +1,7 @@
 import mongoose from '../mongo';
+import { JourneyType } from '../utils/Types';
 
-const journeySchema = new mongoose.Schema({
+const journeySchema = new mongoose.Schema<JourneyType>({
   departure: {
     type: String,
     required: true,

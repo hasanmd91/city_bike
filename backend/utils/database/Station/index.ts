@@ -6,10 +6,10 @@ type CreateStationDatabasetype = (input: BikeStationType[]) => void;
 export const createStationDatabase: CreateStationDatabasetype = async (
   input
 ) => {
-  console.log(input);
   try {
     await Station.deleteMany();
     await Station.insertMany(input, { limit: undefined });
+    console.info('Data import completed');
   } catch (error) {
     console.error('Error inserting station documents:', error);
   } finally {

@@ -7,8 +7,7 @@ export const write: Write = async () => {
   const args = process.argv;
 
   if (args.length !== 4) {
-    // eslint-disable-next-line no-console
-    console.log(`Usage: ${args[0]} ${args[1]} input output`);
+    console.info(`Usage: ${args[0]} ${args[1]} input output`);
 
     return;
   }
@@ -17,19 +16,18 @@ export const write: Write = async () => {
   const outputFile = args[3];
 
   const inputExists = existsSync(inputFile);
-  const outputExists = await existsSync(outputFile);
+  const outputExists = existsSync(outputFile);
 
   if (!inputExists || !outputExists) {
-    // eslint-disable-next-line no-console
-    console.log('Please use valid input and output file paths');
+    console.info('Please use valid input and output file paths');
 
     return;
   }
 
   convertCsvToJson(inputFile, async (output) => {
-    const outputString = await JSON.stringify(output);
+    const outputString = JSON.stringify(output);
 
-    await writeFileSync(args[3], outputString, 'utf8');
+    writeFileSync(args[3], outputString, 'utf8');
   });
 };
 

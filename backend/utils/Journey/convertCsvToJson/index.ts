@@ -39,12 +39,10 @@ export const convertCsvToJson: ConvertCsvToJsonType = (file, callBack) => {
         }
       })
       .on('end', () => {
-        // eslint-disable-next-line no-console
-        console.log('Data import completed.');
+        console.info('Data import completed.');
         callBack(data);
       });
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error('An error occurred:', error);
   }
 };

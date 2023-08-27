@@ -2,7 +2,6 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import { errorHandeler, unknownEndpoint } from './middleware';
-
 import('express-async-errors');
 
 const app = express();

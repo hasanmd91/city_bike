@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import { createJourneyDatabase } from '../Journey';
 import { createStationDatabase } from '../Station';
+import { DatabaseType } from '../../Types';
 
 type Write = () => void;
 
@@ -25,12 +26,9 @@ export const write: Write = async () => {
   const inputString = readFileSync(args[2], 'utf-8');
   const input = await JSON.parse(inputString);
 
-  if (database === 'Journey') {
-    console.log('createJourneyDatabase is callled');
+  if (database === DatabaseType.Journey) {
     createJourneyDatabase(input);
-  } else if (database === 'Station') {
-    console.log('createStationDatabase is called');
-
+  } else if (database === DatabaseType.Station) {
     createStationDatabase(input);
   }
 };

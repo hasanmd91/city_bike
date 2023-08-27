@@ -32,8 +32,8 @@
     "test": "jest --verbose --runInBand --detectOpenHandles --coverage",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix",
-    "csv:journey": "ts-node --esm  utils/Journey/write/index.ts  utils/Journey/write/data.csv utils/Journey/write/data.json && npx prettier --write utils/Journey/write/data.json",
-    "csv:staion": "ts-node --esm  utils/Station/write/index.ts  utils/Station/write/data.csv utils/Station/write/data.json && npx prettier --write utils/Station/write/data.json",
+    "csv:journey": "ts-node --esm  utils/Converter/Journey/write/index.ts  utils/Converter/Journey/write/data.csv utils/Converter/Journey/write/data.json && npx prettier --write utils/Converter/Journey/write/data.json",
+    "csv:station": "ts-node --esm  utils/Converter/Station/write/index.ts  utils/Converter/Station/write/data.csv utils/Converter/Station/write/data.json && npx prettier --write utils/Converter/Station/write/data.json",
     "import:journey": "ts-node --esm  utils/database/write/index.ts utils/Journey/write/data.json Journey",
     "import:station": "ts-node --esm  utils/database/write/index.ts utils/Station/write/data.json Station"
   },

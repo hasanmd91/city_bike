@@ -9,7 +9,7 @@ export const createJourneyDatabase: createJourneyDatabaseType = async (
   try {
     await Journey.deleteMany();
     await Journey.insertMany(input, { limit: undefined });
-    console.info('Data import completed...');
+    console.info('Data import completed');
   } catch (error) {
     console.error('Error inserting journey documents:', error);
   } finally {

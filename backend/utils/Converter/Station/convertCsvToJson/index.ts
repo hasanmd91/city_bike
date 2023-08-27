@@ -1,6 +1,6 @@
 import fs from 'fs';
 import csv from 'csv-parser';
-import { BikeStationType } from '../../Types';
+import { BikeStationType } from '../../../Types';
 
 type ConvertCsvToJsonType = (
   file: string,

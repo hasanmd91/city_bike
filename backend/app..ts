@@ -1,8 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import 'express-async-errors';
 import { errorHandeler, unknownEndpoint } from './middleware';
-import('express-async-errors');
 
 const app = express();
 app.use(cors());

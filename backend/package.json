@@ -4,26 +4,30 @@
   "main": "index.js",
   "author": "Hasan",
   "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.4",
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/morgan": "^1.9.5",
     "@types/node": "^20.5.1",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-config-standard-with-typescript": "^37.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-n": "^16.0.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "prettier": "3.0.2",
+    "eslint": "^8.48.0",
+    "morgan": "^1.10.0",
+    "prettier": "^3.0.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^5.1.6"
   },
   "scripts": {
@@ -39,15 +43,6 @@
     "import:journey": "ts-node --esm  utils/database/write/index.ts utils/Journey/write/data.json Journey",
     "import:station": "ts-node --esm  utils/database/write/index.ts utils/Station/write/data.json Station"
   },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "csv-parser": "^3.0.0",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-async-errors": "^3.1.1",
-    "mongodb": "^5.7.0",
-    "mongoose": "^7.4.4",
-    "morgan": "^1.10.0",
-    "uuid": "^9.0.0"
-  }
+  "keywords": [],
+  "description": ""
 }
